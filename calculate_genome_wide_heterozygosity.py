@@ -27,6 +27,14 @@ parser.add_argument('--o', help = 'Output directory')
 class Heterozygosity:
 
 	def sequences_bam(self, tsv_f):
+		"""
+  		Example of a tsv_f:
+    		CM046080.1,1,247284360
+		...
+		where CM046080.1 is the GenBank accession, 1 is the chromosome as integer, and 247284360 is the chromosome length
+  		This function takes the GenBank accession and replaces it with an integer. This file should be prepared using 
+    		the genome assembly report file provided by NCBI. 
+  		"""
 		self.mygenome = {}
 		# Retain only autosomes and sex chromosomes
 		with open(tsv_f) as f:
@@ -53,6 +61,7 @@ class Heterozygosity:
 	def bam_depth(self, genbank_acc, start, end, min_depth, max_depth, bam_f, vcf_f, window, output_file):
 		cov_sites = 0
 		# Obtain the read depth of each site in the BAM file
+		# Remember to load samtools before running this script ! 
 		command = 'samtools depth -r %s:%d-%d %s' %(genbank_acc, start, end, bam_f)
 		cmd = subprocess.check_output(command, shell = True).decode()
 		outcmd = cmd.split('\n')
