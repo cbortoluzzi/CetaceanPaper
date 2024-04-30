@@ -3,7 +3,6 @@
 
 
 # Author : Chiara Bortoluzzi
-# Email : chiara.bortoluzzi.2@gmail.com
 
 
 import gzip
