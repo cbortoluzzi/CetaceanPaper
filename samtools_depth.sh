@@ -15,7 +15,7 @@
 if [ $# -ne 1 ]
 then
 	echo -e "\nusage: `basename $0` <bam>\n"
-	echo -e "DESCRIPTION:Use Calculate general statistics of aligned sequences in BAM format using bamtools and qualimap\n\n"
+	echo -e "DESCRIPTION:Use Calculate average genome-wide coverage using samtools depth\n\n"
 	echo -e "INPUT:		<bam>	Aligned sequences in BAM format\n"
 
 	echo -e "REQUIRES: The script requires samtools (v1.2)"
