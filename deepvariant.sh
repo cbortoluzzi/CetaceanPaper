@@ -21,11 +21,11 @@ if [ $# -ne 2 ]
 then
 	echo -e "\nusage: `basename $0` <reference_genome> <bam>\n"
 	echo -e "DESCRIPTION:Use DeepVariant to call variants from PacBio HiFi reads\n\n"
-	echo -e "INPUT:      <reference_genome>	  The reference genome of the species of interest"
-	echo -e "            <bam>			          Aligned sequences in BAM format\n"
+	echo -e "INPUT:      <reference_genome>	The reference genome of the species of interest"
+	echo -e "            <bam>		Aligned sequences in BAM format\n"
 
-	echo -e "OUTPUT:     <vcf>			          Called variants stored in a file in VCF format"
-	echo -e "            <html>			          A VCF stats report\n"
+	echo -e "OUTPUT:     <vcf>		Called variants stored in a file in VCF format"
+	echo -e "            <html>		A VCF stats report\n"
 
 	echo -e "REQUIRES: The script requires deepvariant (v1.6.0)"
 	exit
