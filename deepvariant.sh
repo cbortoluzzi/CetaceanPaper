@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# Author : cbortoluzzi@ethz.ch
+# Author : Chiara Bortoluzzi
 
 
 #SBATCH -n 1
