@@ -39,8 +39,6 @@ export TMPDIR="/tmp"
 
 # The reference genome and bam file must be indexed
 
-fasta=`echo $ref | sed 's/.fna.gz/.fasta/g'`
-
 mkdir -p deepvariant
 
 vcf=deepvariant/"`basename $bam .bam`.deepvariant"
@@ -49,7 +47,7 @@ if [[ ! -f "$vcf" ]]; then
 	echo -e "Run DeepVariant on $ref and $bam...this is going to take some time\n\n"
 	singularity run -B /cluster/work/pausch/cbortoluzzi/cetaceans deepvariant_latest.sif /opt/deepvariant/bin/run_deepvariant \
 	--model_type WGS \
-	--ref=$fasta \
+	--ref=$ref \
 	--reads=$bam \
 	--output_vcf=$vcf.vcf.gz \
 	--output_gvcf=$vcf.g.vcf.gz \
